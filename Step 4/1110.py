@@ -8,11 +8,8 @@ n = int(input())
 newnum = n
 
 while True:
-
-    if n<10:
-        n = 10*n
     
-    n = (n%10)*10 + (n//10+n%10) % 10
+    n = (n%10)*10 + (n//10+n%10)%10
     
     cycle = cycle + 1
 

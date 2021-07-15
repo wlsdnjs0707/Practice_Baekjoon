@@ -23,4 +23,4 @@ for i in range(c):
             if grade[i]>summ:
                 count+=1
 
-    print("{0}%".format(round(count/grade[0]*100),4))
+    print("{:.3f}%".format(round((count/grade[0])*100,3)))

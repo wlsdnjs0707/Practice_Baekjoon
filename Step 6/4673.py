@@ -5,18 +5,21 @@ def self_numbering(a:list):
 
         number = i
 
-        while number<10000:
-            if number<10:
-                number = number + number
-            elif number<100:
-                number = number + number//10 + (number - (number//10)*10)
-            elif number<1000:
-                number = number + number//100 + (number - (number//100)*100)//10 + (number - (number//100)*100 - (number//10)*10)
-            elif number<10000:
-                number = number + number//1000 + (number - (number//1000)*1000)//100 + (number - (number//1000)*1000 - (number//100)*100)//10 + (number - (number//1000)*1000 - (number//100)*100 - (number//10)*10)
-            
-            if number<10000:
-                a[number-1] = 0
+        if number<10:
+            nn = number + number
+            # 1 = 1 + 1
+        elif number<100:
+            nn = number + number//10 + number%10
+            # 12 = 12 + 1 + 2
+        elif number<1000:
+            nn = number + number//100 + (number%100)//10 + number%10
+            # 123 = 123 + 1 + 2 + 3
+        elif number<10000:
+            nn = number + number//1000 + (number%1000)//100 + (number%100)//10 + number%10
+            # 1234 = 1234 + 1 + 2 + 3 + 4
+        
+        if nn<=10000:
+            a[nn-1] = 0
 
 a = []
 

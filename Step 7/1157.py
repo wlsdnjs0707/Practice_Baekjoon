@@ -62,12 +62,13 @@ def find_alphabet(l:list):
     switch = 0
 
     for j in range(len(count)):
+
         if count[j]>maxnum:
             maxnum=count[j]
             alphabet=j
         elif maxnum!=0 and count[j]==maxnum:
-            swtich=1
-    
+            switch=1
+
     if switch==0:
         print(chr(alphabet+65))
     else:
